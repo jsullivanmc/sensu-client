@@ -21,7 +21,7 @@ module Sensu
         })
         begin
           #check = Oj.load(data)
-          check = JSON.parse(data)
+          check = JSON.parse(data,:symbolize_names => true)
           validates = [:name, :output].all? do |key|
             check[key].is_a?(String)
           end

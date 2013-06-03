@@ -193,7 +193,7 @@ module Sensu
         queue.subscribe do |payload|
           begin
             #check = Oj.load(payload)
-            check = JSON.parse(payload)
+            check = JSON.parse(payload,:symbolize_names => true)
             @logger.info('received check request', {
               :check => check
             })

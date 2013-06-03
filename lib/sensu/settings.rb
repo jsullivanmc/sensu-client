@@ -85,7 +85,7 @@ module Sensu
         begin
           contents = File.open(file, 'r').read
           #config = Oj.load(contents)
-          config = JSON.parse(contents)
+          config = JSON.parse(contents,:symbolize_names => true)
           merged = deep_merge(@settings, config)
           unless @loaded_files.empty?
             @logger.warn('config file applied changes', {
