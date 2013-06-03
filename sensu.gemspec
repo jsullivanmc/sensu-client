@@ -2,18 +2,18 @@
 require File.join(File.dirname(__FILE__), 'lib', 'sensu', 'constants')
 
 Gem::Specification.new do |s|
-  s.name        = 'sensu'
+  s.name        = 'sensu-client'
   s.version     = Sensu::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ['Sean Porter', 'Justin Kolberg']
-  s.email       = ['portertech@gmail.com', 'justin.kolberg@sonian.net']
-  s.homepage    = 'https://github.com/sensu/sensu'
+  s.authors     = ['dn365']
+  s.email       = ['dn365@ouklook']
+  s.homepage    = 'https://github.com/dn365/sensu-client'
   s.summary     = 'A monitoring framework'
   s.description = 'A monitoring framework that aims to be simple, malleable, and scalable. Uses the publish/subscribe model.'
   s.license     = 'MIT'
   s.has_rdoc    = false
 
-  s.add_dependency('oj', '2.0.9')
+  s.add_dependency('json')
   s.add_dependency('eventmachine', '1.0.3')
   s.add_dependency('amqp', '0.9.10')
   s.add_dependency('em-redis-unified', '0.4.1')
